@@ -1,21 +1,18 @@
 .btn {
-    background-image: linear-gradient(90deg,#723a65, #f446a6e4);
+    position: relative;
+    overflow: hidden;
     padding: 10px 20px;
     margin: 10px;
+    font-weight: bold;
+    background-image: linear-gradient(90deg, #723a65, #f446a6e4);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: bold;
 }
 
-button {
-    position: relative;
-    overflow: hidden;
-}
-
-button::before,
-button::after {
+.btn::before,
+.btn::after {
     display: block;
     position: absolute;
     content: '';

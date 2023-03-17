@@ -1,11 +1,12 @@
 import React from 'react';
 import AppHeader from './AppHeader';
 import AppButton from './AppButton';
+import Box from './Box';
 import './FormPanel.css';
 
 const FormPanel = () => {
 	return (
-		<div className='box'>
+		<Box>
 			<AppHeader />
 			<form className='form__box'>
 				<label for='username' className='form__label'>
@@ -18,7 +19,7 @@ const FormPanel = () => {
 				<input type={'number'} name='age' className='form__input'></input>
 			</form>
 			<AppButton />
-		</div>
+		</Box>
 	);
 };
 
