@@ -3,4 +3,30 @@
     padding: 20px;
     margin: 30px;
     border-radius: 8px;
+    }
+
+.form__box {
+font-size: 1.4rem;
+display: flex;
+flex-direction: column;
 }
+
+.form__label {
+padding: 10px 20px;
+}
+
+.form__input {
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 1.2rem;
+    border: 1px solid #dad9d9;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    .form__input {
+        margin: auto;
+      width: 60%;
+    
+    }
+  }
