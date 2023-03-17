@@ -1,16 +1,21 @@
 import React from 'react';
-import FormPanel from './component/FormPanel'
-import UsersData from './component/UsersData'
+import FormPanel from './component/FormPanel';
+import UsersData from './component/UsersData';
 import './App.css';
 
-function App() {
- 
-    return (
-        <div className='app'>
-              <FormPanel /> 
-              <UsersData />
-        </div>
-    )
+const users = [
+	{ username: 'Damian', age: 25 },
+	{ username: 'Izik', age: 2 },
+	{ username: 'Leon', age: 17 },
+];
+
+function App(prop) {
+	return (
+		<div className='app'>
+			<FormPanel />
+			<UsersData/>
+		</div>
+	);
 }
 
 export default App;
