@@ -13,7 +13,7 @@ function App(prop) {
 	return (
 		<div className='app'>
 			<FormPanel />
-			<UsersData/>
+			<UsersData usernameValue={insertedUsername} userAgeValue={insertedAge}/>
 		</div>
 	);
 }

@@ -3,11 +3,11 @@ import Box from './Box';
 import UserItem from './UserItem';
 import './UsersData.css';
 
-const UsersData = () => {
+const UsersData = (props) => {
 	return (
 		<Box>
 			<ul className='user__list'>
-				<UserItem />
+				<UserItem pasteUsername={props.usernameValue} pasteUserAge={props.userAgeValue}/>
 			</ul>
 		</Box>
 	);

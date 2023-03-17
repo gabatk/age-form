@@ -1,10 +1,11 @@
 import React from 'react';
 import './UserItem.css';
 
-const UserItem = () => {
+const UserItem = props => {
 	return (
 		<li className='user__item'>
-			<span className='user__item--span'>Izik</span> (2 years old)
+			<span className='user__item--span'>{props.pasteUsername}</span> (
+			{props.pasteUserAge})
 		</li>
 	);
 };
