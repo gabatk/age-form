@@ -4,15 +4,3 @@
     text-align: left;
     font-size: 1.2rem;
 }
-
-.user__item {
-    margin-bottom: 20px;
-    padding: 5px;
-    font-size: 1.2rem;
-    border: 1px solid #dad9d9;
-    border-radius: 5px;
-}
-
-.user__item--span {
-    font-weight: bold;
-}
