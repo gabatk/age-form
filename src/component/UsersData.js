@@ -8,11 +8,12 @@ const UsersData = (props) => {
 	return (
 		<Box>
 			<ul className='user__list'>
-				{props.items.map(newUser =>  (
+			{props.items.length === 0 && <p>User list is empty</p>}
+			{props.items.length > 0 &&
+				props.items.map(newUser =>  (
 				<UserItem name={newUser.username} age={newUser.age} key={newUser.id} />))}
 			</ul>
 		</Box>
 	);
-};
-    
+}   
 export default UsersData;
