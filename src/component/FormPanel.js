@@ -21,6 +21,8 @@ const FormPanel = props => {
 			id: Math.random().toString(),
 		};
 		props.onNewUserData(newUser);
+		setusernameInput('');
+		setAgeInput('');
 	};
 
 	return (
@@ -34,6 +36,7 @@ const FormPanel = props => {
 					type={'text'}
 					name='username'
 					id='username'
+					value={usernameInput}
 					className='form__input'
 					onChange={getUsernameData}></input>
 				<label htmlFor='age' className='form__label'>
@@ -42,6 +45,7 @@ const FormPanel = props => {
 				<input
 					type={'number'}
 					name='age'
+					value={ageInput}
 					className='form__input'
 					id='age'
 					onChange={getAgeData}></input>
