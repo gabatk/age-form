@@ -3,21 +3,24 @@ import AppHeader from './AppHeader';
 import Box from './Box';
 import './FormPanel.css';
 
-const FormPanel = () => {
+const FormPanel = props => {
 	const [usernameInput, setusernameInput] = useState('');
-	const [ageInput, setageInput] = useState('');
+	const [ageInput, setAgeInput] = useState('');
 
 	const getUsernameData = event => {
 		setusernameInput(event.target.value);
 	};
 	const getAgeData = event => {
-		setageInput(event.target.value);
+		setAgeInput(event.target.value);
 	};
 
 	const submitFormHandler = () => {
-		const newObject = [{ username: usernameInput, age: ageInput }];
-		console.log(usernameInput);
-		console.log(ageInput);
+		const newUser = {
+			username: usernameInput,
+			age: ageInput,
+			id: Math.random().toString(),
+		};
+		props.onNewUserData(newUser);
 	};
 
 	return (

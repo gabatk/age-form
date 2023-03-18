@@ -4,13 +4,15 @@ import UserItem from './UserItem';
 import './UsersData.css';
 
 const UsersData = (props) => {
+	console.log(props.items);
 	return (
 		<Box>
 			<ul className='user__list'>
-				<UserItem pasteUsername={props.usernameValue} pasteUserAge={props.userAgeValue}/>
+				{props.items.map(newUser =>  (
+				<UserItem name={newUser.username} age={newUser.age} key={newUser.id} />))}
 			</ul>
 		</Box>
 	);
 };
-
+    
 export default UsersData;

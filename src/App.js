@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormPanel from './component/FormPanel';
 import UsersData from './component/UsersData';
 import './App.css';
 
-const users = [
-	{ username: 'Damian', age: 25 },
-	{ username: 'Izik', age: 2 },
-	{ username: 'Leon', age: 17 },
+const usersList = [
+	{ username: 'Damian', age: 25, id:'e1'},
+	{ username: 'Izik', age: 2, id:'e2' },
+	{ username: 'Leon', age: 17, id:'e3' },
 ];
 
-function App(prop) {
+function App() {
+    const [newUserInfo, setNewUserInfo] = useState(usersList),
+
+newUserDataHandler = (newUserData) => {
+    setNewUserInfo(prevNewUserInfo => {
+        console.log( [newUserData, ...prevNewUserInfo]);
+        return [newUserData, ...prevNewUserInfo]
+
+    })
+}
+    
 	return (
 		<div className='app'>
-			<FormPanel />
-			<UsersData usernameValue={insertedUsername} userAgeValue={insertedAge}/>
+			<FormPanel onNewUserData={newUserDataHandler} />
+			<UsersData  items={newUserInfo}/>
 		</div>
 	);
 }
