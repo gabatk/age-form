@@ -20,10 +20,13 @@ newUserDataHandler = (newUserData) => {
 }
     
 	return (
+        <div>
 		<div className='app'>
 			<FormPanel onNewUserData={newUserDataHandler} />
 			<UsersData  items={newUserInfo}/>
 		</div>
+        <ErrorBox />
+        </div>
 	);
 }
 
