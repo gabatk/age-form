@@ -7,6 +7,8 @@ import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 
 const ErrorModal = (props) => {
 	return (
+        <div>
+        <div className='backdrop'></div>
 		<Box className='error-box'>
 			<div>
             <FontAwesomeIcon icon={faTriangleExclamation} style={{color: "#6c4394",}} className='fa-icon'/>
@@ -17,6 +19,7 @@ const ErrorModal = (props) => {
             <p className='error-message'>Something went wrong, please check the data you entered.</p> */}
             <Button className=''>Cancel</Button>
 		</Box>
+        </div>
 	);
 };
 
