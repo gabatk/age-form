@@ -2,6 +2,15 @@
     font-size: 4rem;
 }
 
+.error-box {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
 .error-title {
     font-size: 1.8rem;
+}
+
+.error-text {
+    font-size: 1.2rem;
 }
