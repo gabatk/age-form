@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AppHeader from './AppHeader';
 import Box from './Box';
+import Button from './Button';
 import './FormPanel.css';
 
 const FormPanel = props => {
@@ -14,7 +15,8 @@ const FormPanel = props => {
 		setAgeInput(event.target.value);
 	};
 
-	const submitFormHandler = () => {
+	const submitFormHandler = event => {
+		event.preventDefault();
 		const newUser = {
 			username: usernameInput,
 			age: ageInput,
@@ -28,7 +30,7 @@ const FormPanel = props => {
 	return (
 		<Box>
 			<AppHeader />
-			<form className='form__box'>
+			<form onSubmit={submitFormHandler} className='form__box'>
 				<label htmlFor='username' className='form__label'>
 					Username:
 				</label>
@@ -47,10 +49,8 @@ const FormPanel = props => {
 					className='form__input'
 					id='age'
 					onChange={getAgeData}></input>
+				<Button type='submit'>Add User</Button>
 			</form>
-			<button type='submit' className='btn' onClick={submitFormHandler}>
-				Add User
-			</button>
 		</Box>
 	);
 };
