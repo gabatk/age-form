@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.error-modal {
+  width: 70%;
+   margin: 0 auto;}
+
 @media (min-width: 768px) {
   .app {
     width: 75%;

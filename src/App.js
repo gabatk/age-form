@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FormPanel from './component/FormPanel';
 import UsersData from './component/UsersData';
-import ErrorBox from './component/ErrorBox';
+import ErrorModal from './component/ErrorModal';
 import './App.css';
 
 const usersList = [
@@ -25,7 +25,9 @@ newUserDataHandler = (newUserData) => {
 			<FormPanel onNewUserData={newUserDataHandler} />
 			<UsersData  items={newUserInfo}/>
 		</div>
-        <ErrorBox />
+		<div className='app error-modal'>
+        <ErrorModal />
+		</div>
         </div>
 	);
 }
