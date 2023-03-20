@@ -11,24 +11,34 @@ const usersList = [
 ];
 
 function App() {
-	const [newUserInfo, setNewUserInfo] = useState(usersList),
-		newUserDataHandler = newUserData => {
-			setNewUserInfo(prevNewUserInfo => {
-				return [newUserData, ...prevNewUserInfo];
-			});
-		};
+	const [newUserInfo, setNewUserInfo] = useState(usersList);
+	const [showError, setshowError] = useState();
+
+	const newUserDataHandler = newUserData => {
+		setNewUserInfo(prevNewUserInfo => {
+			return [newUserData, ...prevNewUserInfo];
+		});
+	};
+
+	
+	const showErrorModal  = errorText => {
+		setshowError(errorText);
+		console.log(errorText);
+	};
 
 	return (
 		<div>
 			<div className='app'>
-				<FormPanel onNewUserData={newUserDataHandler} />
+				<FormPanel
+					onNewUserData={newUserDataHandler}
+					onErrorInfo={showErrorModal}
+				/>
 				<UsersData items={newUserInfo} />
 			</div>
 			<div className='app error-modal'>
-				<ErrorModal
-					title='An error occured!'
-					message='Something went wrong, please check the data you entered.'
-				/>
+				{showError && (
+					<ErrorModal title={showError.title} message={showError.message} />
+				)}
 			</div>
 		</div>
 	);
