@@ -17,6 +17,13 @@ const FormPanel = props => {
 
 	const submitFormHandler = event => {
 		event.preventDefault();
+		if (usernameInput.trim().length === 0 || ageInput.trim().length === 0) {
+			return;
+		}
+		if (+ageInput < 1) { //+ dodany, aby zmienić ageInput ze stringa na value
+			return;
+		}
+
 		const newUser = {
 			username: usernameInput,
 			age: ageInput,
