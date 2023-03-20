@@ -56,7 +56,7 @@ const FormPanel = props => {
 					className='form__input'
 					id='age'
 					onChange={getAgeData}></input>
-				<Button type='submit'>Add User</Button>
+				<Button classname='' type='submit'>Add User</Button>
 			</form>
 		</Box>
 	);
