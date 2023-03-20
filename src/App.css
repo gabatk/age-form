@@ -8,8 +8,10 @@
 }
 
 .error-modal {
+  min-width: 250px;
   width: 70%;
-   margin: 0 auto;}
+  margin: 0 auto;
+}
 
 @media (min-width: 768px) {
   .app {
