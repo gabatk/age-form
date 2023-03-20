@@ -34,7 +34,6 @@ const FormPanel = props => {
 				</label>
 				<input
 					type={'text'}
-					name='username'
 					id='username'
 					value={usernameInput}
 					className='form__input'
@@ -44,7 +43,6 @@ const FormPanel = props => {
 				</label>
 				<input
 					type={'number'}
-					name='age'
 					value={ageInput}
 					className='form__input'
 					id='age'
