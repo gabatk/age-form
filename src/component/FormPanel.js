@@ -18,30 +18,44 @@ const FormPanel = props => {
 
 	const submitFormHandler = event => {
 		event.preventDefault();
-		if (usernameInput.trim().length === 0 || ageInput.trim().length === 0) {
-			console.log('a');
+		console.log(usernameInput);
+		console.log(ageInput);
+
+				if (usernameInput.trim().length === 0 && +ageInput <1) {
 			setError({
 				title: 'Invalid input',
 				message: 'Please enter a valid name and age.',
 			});
-		} else if (+ageInput < 1) {
-			//+ dodany, aby zmienić ageInput ze stringa na value
-			console.log('b');
+			props.onErrorInfo(error);
+			return
+		} else if (
+			usernameInput.trim().length === 0 &&
+			ageInput.trim().length != 0
+		) {
 			setError({
-				title: 'Invalid input',
+				title: 'Invalid username',
+				message: 'Please enter a valid name.',
+			});
+			props.onErrorInfo(error);
+			return
+		} else if (+ageInput <1) {
+			setError({
+				title: 'Invalid age',
 				message: 'Please enter a valid age (> 0).',
 			});
-		}
-
-		const newUser = {
-			username: usernameInput,
-			age: ageInput,
-			id: Math.random().toString(),
-		};
-		props.onNewUserData(newUser);
-		props.onErrorInfo(error);
-		setusernameInput('');
-		setAgeInput('');
+			props.onErrorInfo(error);
+			return
+		} 
+			const newUser = {
+				username: usernameInput,
+				age: ageInput,
+				id: Math.random().toString(),
+			};
+			props.onNewUserData(newUser);
+			// props.onErrorInfo(error);
+			setusernameInput('');
+			setAgeInput('');
+		
 	};
 
 	return (
