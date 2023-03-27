@@ -7,7 +7,8 @@ import './FormPanel.css';
 const FormPanel = props => {
 	const [usernameInput, setusernameInput] = useState('');
 	const [ageInput, setAgeInput] = useState('');
-	const [error, setError] = useState();
+	// const [error, setError] = useState();
+	let error = '';
 
 	const getUsernameData = event => {
 		setusernameInput(event.target.value);
@@ -22,27 +23,27 @@ const FormPanel = props => {
 		console.log(ageInput);
 
 		if (usernameInput.trim().length === 0 && +ageInput < 1) {
-			setError({
+			error = {
 				title: 'Invalid input',
 				message: 'Please enter a valid name and age.',
-			});
+			};
 			props.onErrorInfo(error);
 			return;
 		} else if (
 			usernameInput.trim().length === 0 &&
 			ageInput.trim().length != 0
 		) {
-			setError({
+			error = {
 				title: 'Invalid username',
 				message: 'Please enter a valid name.',
-			});
+			};
 			props.onErrorInfo(error);
 			return;
 		} else if (+ageInput < 1) {
-			setError({
+			error = {
 				title: 'Invalid age',
 				message: 'Please enter a valid age (> 0).',
-			});
+			};
 			props.onErrorInfo(error);
 			return;
 		}
@@ -52,12 +53,11 @@ const FormPanel = props => {
 			id: Math.random().toString(),
 		};
 		props.onNewUserData(newUser);
-		// props.onErrorInfo(error);
 		setusernameInput('');
 		setAgeInput('');
 	};
 
-		return (
+	return (
 		<Box className=''>
 			<AppHeader />
 			<form onSubmit={submitFormHandler} className='form__box'>
