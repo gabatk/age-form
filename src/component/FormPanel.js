@@ -58,7 +58,7 @@ const FormPanel = props => {
 	};
 
 		return (
-		<Box className='' onConfirm={props.onErrorHandler}>
+		<Box className=''>
 			<AppHeader />
 			<form onSubmit={submitFormHandler} className='form__box'>
 				<label htmlFor='username' className='form__label'>

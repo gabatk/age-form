@@ -26,7 +26,8 @@ function App() {
 	};
 
 	const errorHandler = () => {
-		setError(null);
+		setshowError(null);
+		console.log('clicked');
 	};
 
 	return (
@@ -35,13 +36,16 @@ function App() {
 				<FormPanel
 					onNewUserData={newUserDataHandler}
 					onErrorInfo={showErrorModal}
-					onErrorHandler={errorHandler}
 				/>
 				<UsersData items={newUserInfo} />
 			</div>
 			<div className='app error-modal'>
 				{showError && (
-					<ErrorModal title={showError.title} message={showError.message} />
+					<ErrorModal
+						title={showError.title}
+						message={showError.message}
+						onConfirm={errorHandler}
+					/>
 				)}
 			</div>
 		</div>
