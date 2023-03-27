@@ -7,7 +7,6 @@ import './FormPanel.css';
 const FormPanel = props => {
 	const [usernameInput, setusernameInput] = useState('');
 	const [ageInput, setAgeInput] = useState('');
-	// const [error, setError] = useState();
 	let error = '';
 
 	const getUsernameData = event => {
