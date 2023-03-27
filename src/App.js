@@ -20,10 +20,13 @@ function App() {
 		});
 	};
 
-	
-	const showErrorModal  = errorText => {
+	const showErrorModal = errorText => {
 		setshowError(errorText);
 		console.log(errorText);
+	};
+
+	const errorHandler = () => {
+		setError(null);
 	};
 
 	return (
@@ -32,6 +35,7 @@ function App() {
 				<FormPanel
 					onNewUserData={newUserDataHandler}
 					onErrorInfo={showErrorModal}
+					onErrorHandler={errorHandler}
 				/>
 				<UsersData items={newUserInfo} />
 			</div>

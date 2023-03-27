@@ -21,13 +21,13 @@ const FormPanel = props => {
 		console.log(usernameInput);
 		console.log(ageInput);
 
-				if (usernameInput.trim().length === 0 && +ageInput <1) {
+		if (usernameInput.trim().length === 0 && +ageInput < 1) {
 			setError({
 				title: 'Invalid input',
 				message: 'Please enter a valid name and age.',
 			});
 			props.onErrorInfo(error);
-			return
+			return;
 		} else if (
 			usernameInput.trim().length === 0 &&
 			ageInput.trim().length != 0
@@ -37,29 +37,28 @@ const FormPanel = props => {
 				message: 'Please enter a valid name.',
 			});
 			props.onErrorInfo(error);
-			return
-		} else if (+ageInput <1) {
+			return;
+		} else if (+ageInput < 1) {
 			setError({
 				title: 'Invalid age',
 				message: 'Please enter a valid age (> 0).',
 			});
 			props.onErrorInfo(error);
-			return
-		} 
-			const newUser = {
-				username: usernameInput,
-				age: ageInput,
-				id: Math.random().toString(),
-			};
-			props.onNewUserData(newUser);
-			// props.onErrorInfo(error);
-			setusernameInput('');
-			setAgeInput('');
-		
+			return;
+		}
+		const newUser = {
+			username: usernameInput,
+			age: ageInput,
+			id: Math.random().toString(),
+		};
+		props.onNewUserData(newUser);
+		// props.onErrorInfo(error);
+		setusernameInput('');
+		setAgeInput('');
 	};
 
-	return (
-		<Box className=''>
+		return (
+		<Box className='' onConfirm={props.onErrorHandler}>
 			<AppHeader />
 			<form onSubmit={submitFormHandler} className='form__box'>
 				<label htmlFor='username' className='form__label'>
