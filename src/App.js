@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
+// import React, {Fragment} from 'react'; używamy z zapisem dla react.fragments <fragments> </Fragments>
 import FormPanel from './component/FormPanel';
 import UsersData from './component/UsersData';
 import ErrorModal from './component/ErrorModal';
-import Wrapper from './component/Helpers/Wrapper'
+import Wrapper from './component/Helpers/Wrapper';
 import './App.css';
 
 const usersList = [
@@ -33,6 +34,8 @@ function App() {
 
 	return (
 		<Wrapper>
+			{/* <>  */}
+			{/* <Fragment> */}
 			<div className='app'>
 				<FormPanel
 					onNewUserData={newUserDataHandler}
@@ -49,8 +52,15 @@ function App() {
 					/>
 				)}
 			</div>
+			{/* </Fragment> */}
+			{/* </> */}
 		</Wrapper>
 	);
 }
+
+{
+	/* <> </>  Stosowane w momencie importowania tylko React */
+}
+{	/* <Fragment> </Fragment> Stosowane w momencie importu React i 'Fragment' */}
 
 export default App;
