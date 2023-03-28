@@ -1,13 +1,14 @@
 import React from 'react';
 import Box from './Box';
 import Button from './Button';
+import Wrapper from '../component/Helpers/Wrapper';
 import './ErrorModal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const ErrorModal = props => {
 	return (
-		<div>
+		<Wrapper>
 			<div className='backdrop' onClick={props.onConfirm}></div>
 			<Box className='error-box'>
 				<div>
@@ -25,7 +26,7 @@ const ErrorModal = props => {
 					Cancel
 				</Button>
 			</Box>
-		</div>
+		</Wrapper>
 	);
 };
 

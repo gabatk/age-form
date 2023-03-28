@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FormPanel from './component/FormPanel';
 import UsersData from './component/UsersData';
 import ErrorModal from './component/ErrorModal';
+import Wrapper from './component/Helpers/Wrapper'
 import './App.css';
 
 const usersList = [
@@ -31,7 +32,7 @@ function App() {
 	};
 
 	return (
-		<div>
+		<Wrapper>
 			<div className='app'>
 				<FormPanel
 					onNewUserData={newUserDataHandler}
@@ -48,7 +49,7 @@ function App() {
 					/>
 				)}
 			</div>
-		</div>
+		</Wrapper>
 	);
 }
 
