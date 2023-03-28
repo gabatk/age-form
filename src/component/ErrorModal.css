@@ -17,6 +17,7 @@
 
 .error-title {
     font-size: 1.8rem;
+    background-color: red;
 }
 
 .error-message {

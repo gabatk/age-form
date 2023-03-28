@@ -12,21 +12,22 @@ const Backdrop = props => {
 };
 
 const ModalOverlay = props => {
-	<Box className='error-box'>
-		;
-		<div>
-			<FontAwesomeIcon
-				icon={faTriangleExclamation}
-				style={{ color: '#6c4394' }}
-				className='fa-icon'
-			/>
-		</div>
-		<h2 className='error-title'>{props.title}</h2>
-		<p className='error-message'>{props.message}</p>
-		<Button className='' onClick={props.onConfirm}>
-			Cancel
-		</Button>
-	</Box>;
+	return (
+		<Box className='error-box'>
+			<div>
+				<FontAwesomeIcon
+					icon={faTriangleExclamation}
+					style={{ color: '#6c4394' }}
+					className='fa-icon'
+				/>
+			</div>
+			<h2 className='error-title'>{props.title}</h2>
+			<p className='error-message'>{props.message}</p>
+			<Button className='' onClick={props.onConfirm}>
+				Cancel
+			</Button>
+		</Box>
+	);
 };
 
 // const ErrorModal = props => {
